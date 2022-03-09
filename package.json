@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "@vercel/node": "^1.13.0",
+    "discord-api-types": "^0.28.0",
+    "discord-interactions": "^3.0.0"
+  },
+  "name": "interactions",
+  "version": "1.0.0",
+  "main": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
