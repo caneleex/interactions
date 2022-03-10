@@ -1,4 +1,4 @@
-import { APIApplicationCommandInteractionData, APIApplicationCommandInteractionDataUserOption, APIChatInputApplicationCommandInteraction, APIUser, APIUserApplicationCommandInteraction, InteractionResponseType, MessageFlags } from 'discord-api-types/v10';
+import { APIApplicationCommandInteractionData, APIChatInputApplicationCommandInteraction, APIUser, APIUserApplicationCommandInteraction, InteractionResponseType, MessageFlags } from 'discord-api-types/v10';
 import { handler } from '../lib/handler';
 import { get_context_menu_target_user, get_user_option, respond } from '../lib/utils';
 
