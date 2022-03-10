@@ -49,7 +49,7 @@ function get_reverse_url(user: APIUser): string {
     url = default_url(+user.discriminator % 5)
   }
   else {
-    url = avatar_url(user.id, avatar, avatar.startsWith('_a') ? '.gif' : '.png')
+    url = avatar_url(user.id, avatar, avatar.startsWith('a_') ? '.gif' : '.png')
   }
   return google_url(cdn_url(url))
 }
