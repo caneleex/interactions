@@ -1,5 +1,5 @@
 import { VercelResponse } from "@vercel/node";
-import { APIApplicationCommandInteraction, APIApplicationCommandInteractionData, APIApplicationCommandInteractionDataBasicOption, APIChatInputApplicationCommandInteraction, APIInteractionResponse, APIUser, APIUserApplicationCommandInteraction } from "discord-api-types/v10";
+import { APIApplicationCommandInteractionDataBasicOption, APIChatInputApplicationCommandInteraction, APIInteractionResponse, APIUser, APIUserApplicationCommandInteraction } from "discord-api-types/v10";
 
 export const respond = (response: APIInteractionResponse, res: VercelResponse) =>
   res.setHeader('Content-Type', 'application/json').send(JSON.stringify(response))
