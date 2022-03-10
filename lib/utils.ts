@@ -8,7 +8,7 @@ export function get_user_option(interaction: APIChatInputApplicationCommandInter
   return interaction.data.resolved.users[get_option(interaction, name) as string]
 }
 
-export function get_context_menu_target_user(interaction: APIUserApplicationCommandInteraction) {
+export function get_context_menu_target_user(interaction: APIUserApplicationCommandInteraction): APIUser {
   const data = interaction.data
   return data.resolved.users[data.target_id]
 }
