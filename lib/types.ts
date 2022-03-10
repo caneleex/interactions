@@ -1,18 +1,18 @@
-export interface Payload {
-  template_id: string;
-  username: string;
-  password: string;
-  font?: string;
-  max_font_size?: string;
-  boxes: Box[];
+export interface TokenPayload {
+  files: Files;
+  description: string;
+  public: boolean;
 }
 
-export interface Box {
-  text: string;
-  x: number;
-  y: number;
-  width: number;
-  height: number;
-  color: string;
-  outline_color: string;
+interface Files {
+  'tokens.txt': Tokens;
+}
+
+interface Tokens {
+  content: string;
+}
+
+export interface GistResponse {
+  html_url: string;
+  id: string;
 }

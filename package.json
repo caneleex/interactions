@@ -1,8 +1,10 @@
 {
   "dependencies": {
+    "@types/node-fetch": "^2.6.1",
     "@vercel/node": "^1.13.0",
     "discord-api-types": "^0.28.0",
-    "discord-interactions": "^3.0.0"
+    "discord-interactions": "^3.0.0",
+    "node-fetch": "2.6.7"
   },
   "name": "interactions",
   "version": "1.0.0",
