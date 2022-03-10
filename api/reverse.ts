@@ -5,7 +5,7 @@ import { get_context_menu_target_user, get_user_option, respond } from '../lib/u
 const google_url = (url: string) => `https://www.google.com/searchbyimage?image_url=${url}`
 const cdn_url = (endpoint: string) => `https://cdn.discordapp.com/${endpoint}?size=2048`
 const default_url = (type: number) => `embed/avatars/${type}.png`
-const avatar_url = (id: string, hash: string, ext: string) => `avatars/${id}/${hash}${ext}`
+const avatar_url = (id: string, hash: string, ext: string) => `avatars/${id}/${hash}.${ext}`
 
 export default handler((interaction, res) => {
   const interaction_data = interaction.data as APIApplicationCommandInteractionData
@@ -49,7 +49,7 @@ function get_reverse_url(user: APIUser): string {
     url = default_url(+user.discriminator % 5)
   }
   else {
-    url = avatar_url(user.id, avatar, avatar.startsWith('a_') ? '.gif' : '.png')
+    url = avatar_url(user.id, avatar, avatar.startsWith('a_') ? 'gif' : 'png')
   }
   return google_url(cdn_url(url))
 }
