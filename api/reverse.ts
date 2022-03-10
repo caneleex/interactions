@@ -1,6 +1,6 @@
 import { APIUserApplicationCommandInteraction, InteractionResponseType, MessageFlags } from 'discord-api-types/v10';
 import { handler } from '../lib/handler';
-import { respond } from './_utils';
+import { respond } from '../lib/utils';
 
 const google_url = (url: string) => `https://www.google.com/searchbyimage?image_url=${url}`
 const cdn_url = (endpoint: string) => `https://cdn.discordapp.com/${endpoint}?size=2048`
