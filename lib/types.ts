@@ -1,4 +1,4 @@
-interface Payload {
+export interface Payload {
   template_id: string;
   username: string;
   password: string;
@@ -7,7 +7,7 @@ interface Payload {
   boxes: Box[];
 }
 
-interface Box {
+export interface Box {
   text: string;
   x: number;
   y: number;
