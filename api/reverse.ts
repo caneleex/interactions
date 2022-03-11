@@ -1,9 +1,9 @@
-import { APIApplicationCommandInteractionData, APIChatInputApplicationCommandInteraction, APIUser, APIUserApplicationCommandInteraction, InteractionResponseType, MessageFlags } from 'discord-api-types/v10';
+import { APIApplicationCommandInteractionData, APIChatInputApplicationCommandInteraction, APIUser, APIUserApplicationCommandInteraction, InteractionResponseType, MessageFlags, RouteBases } from 'discord-api-types/v10';
 import { handler } from '../lib/handler';
 import { get_context_menu_target_user, get_user_option, respond } from '../lib/utils';
 
 const google_url = (url: string) => `https://www.google.com/searchbyimage?image_url=${url}`
-const cdn_url = (endpoint: string) => `https://cdn.discordapp.com/${endpoint}?size=2048`
+const cdn_url = (endpoint: string) => `${RouteBases.cdn}/${endpoint}?size=2048`
 const default_url = (type: number) => `embed/avatars/${type}.png`
 const avatar_url = (id: string, hash: string, ext: string) => `avatars/${id}/${hash}.${ext}`
 
