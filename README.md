@@ -15,3 +15,7 @@ Reverse Avatar Search ia Discord bot which can provide you with a link to revers
 ![](https://i.imgur.com/K3TPym3.png)
 
 ![](https://i.imgur.com/b8vypUY.png)
+
+## [GeoKyle](https://github.com/caneleex/interactions/blob/master/api/geokyle.ts)
+
+GeoKyle Bot is a custom bot for the Discord server of [GeoKyle](https://youtube.com/c/GeoKyle), that, right now, only serves as a way to opt into getting notifications for new videos.
