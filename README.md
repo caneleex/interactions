@@ -2,7 +2,7 @@
 
 ## [Invalidator](https://github.com/caneleex/interactions/blob/master/api/invalidator.ts)
 
-Invalidator is a Discord bot inspired by R.Danny that invalidates discord bot tokens found in messages using context menus. [Invite](https://discord.com/oauth2/authorize?client_id=809834457728024659&scope=applications.commands)
+Invalidator is a Discord bot inspired by R.Danny that invalidates Discord bot tokens found in messages using context menus. [Invite](https://discord.com/oauth2/authorize?client_id=809834457728024659&scope=applications.commands)
 
 ![](https://i.imgur.com/mpGPANc.png)
 
