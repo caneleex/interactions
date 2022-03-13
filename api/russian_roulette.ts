@@ -14,7 +14,7 @@ export default handler(async (interaction, res) => {
     respond({
       type: InteractionResponseType.ChannelMessageWithSource,
       data: {
-        content: 'This command is only available in servers.'
+        content: '❌ This command is only available in servers.'
       }
     }, res)
     return
