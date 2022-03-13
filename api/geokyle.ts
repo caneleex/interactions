@@ -22,10 +22,9 @@ export default handler(async (interaction, res) => {
       roles: member_roles
     } as RESTPatchAPIGuildMemberJSONBody)
   })
-  const status = response.status
   let message: string
-  if (status != 200) {
-    message = `❌ There was an error while toggling your role: ${status}`
+  if (!response.ok) {
+    message = `❌ There was an error while toggling your role: ${response.status}`
   }
   else {
     if (hasRole) {
