@@ -10,7 +10,7 @@ const gist_url = 'https://api.github.com/gists'
 export default handler(async (interaction, res) => {
   const message = get_context_menu_target_message(interaction as APIMessageApplicationCommandInteraction)
   let tokens = message.content.match(token_regex)
-  if (tokens === null) {
+  if (!tokens) {
     respond({
       type: InteractionResponseType.ChannelMessageWithSource,
       data: {
