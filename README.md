@@ -2,7 +2,7 @@
 
 ## [Invalidator](https://github.com/caneleex/interactions/blob/master/api/invalidator.ts)
 
-Invalidator is a Discord bot inspired by R.Danny that invalidates Discord bot tokens found in messages using context menus. [Invite](https://discord.com/oauth2/authorize?client_id=809834457728024659&scope=applications.commands)
+Invalidator is a Discord bot inspired by R.Danny that invalidates Discord bot tokens found in messages using a context menu. [Invite](https://discord.com/oauth2/authorize?client_id=809834457728024659&scope=applications.commands)
 
 ![](https://i.imgur.com/mpGPANc.png)
 
@@ -10,7 +10,7 @@ Invalidator is a Discord bot inspired by R.Danny that invalidates Discord bot to
 
 ## [Reverse](https://github.com/caneleex/interactions/blob/master/api/reverse.ts)
 
-Reverse Avatar Search is a Discord bot which can provide you with a link to reverse image search someone's avatar image using context menus. [Invite](https://discord.com/oauth2/authorize?client_id=951483995105935442&scope=applications.commands)
+Reverse Avatar Search is a Discord bot which can provide you with a link to reverse image search someone's avatar image using a context menu or a slash command (`/reverse`). [Invite](https://discord.com/oauth2/authorize?client_id=951483995105935442&scope=applications.commands)
 
 ![](https://i.imgur.com/K3TPym3.png)
 
