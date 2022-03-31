@@ -2,16 +2,16 @@ lockfileVersion: 5.3
 
 specifiers:
   '@types/node-fetch': ^2.6.1
-  '@vercel/node': ^1.13.0
-  discord-api-types: ^0.28.0
-  discord-interactions: ^3.0.0
+  '@vercel/node': ^1.14.0
+  discord-api-types: 0.30.0
+  discord-interactions: ^3.1.0
   node-fetch: 2.6.7
 
 dependencies:
   '@types/node-fetch': 2.6.1
-  '@vercel/node': 1.13.0
-  discord-api-types: 0.28.0
-  discord-interactions: 3.0.0
+  '@vercel/node': 1.14.0
+  discord-api-types: 0.30.0
+  discord-interactions: 3.1.0
   node-fetch: 2.6.7
 
 packages:
@@ -19,18 +19,23 @@ packages:
   /@types/node-fetch/2.6.1:
     resolution: {integrity: sha512-oMqjURCaxoSIsHSr1E47QHzbmzNR5rK8McHuNb11BOM9cHcIK3Avy0s/b2JlXHoQGTYS3NsvWzV1M0iK7l0wbA==}
     dependencies:
-      '@types/node': 17.0.21
+      '@types/node': 17.0.23
       form-data: 3.0.1
     dev: false
 
-  /@types/node/17.0.21:
-    resolution: {integrity: sha512-DBZCJbhII3r90XbQxI8Y9IjjiiOGlZ0Hr32omXIZvwwZ7p4DMMXGrKXVyPfuoBOri9XNtL0UK69jYIBIsRX3QQ==}
+  /@types/node/17.0.23:
+    resolution: {integrity: sha512-UxDxWn7dl97rKVeVS61vErvw086aCYhDLyvRQZ5Rk65rZKepaFdm53GeqXaKBuOhED4e9uWq34IC3TdSdJJ2Gw==}
     dev: false
 
-  /@vercel/node/1.13.0:
-    resolution: {integrity: sha512-AqdUuJC0+r3q1lcL+Knjb+dHsSDSCRfwFPJ7odRkHO7sfoAkhJI4RussIDFTF7Yvt0e+GmWuYGFAgwSiv4FWEg==}
+  /@vercel/node-bridge/2.2.0:
+    resolution: {integrity: sha512-ydYlZyIQfsuriF6qTt/F4vaAt+nb4ZKhLEl2o5AQFa5ED7LoPS5w01Xbujy+25pqS1ODu8/bsqOCUSX8y/+tSQ==}
+    dev: false
+
+  /@vercel/node/1.14.0:
+    resolution: {integrity: sha512-UAb1qQMeTkSXz95yljJpz0MyTzcj++B/1XR0vKFZOs2CEfSkBO1DjzX6BkaKriaihBdbGM/X9UoMJfWfUBBn8Q==}
     dependencies:
-      '@types/node': 17.0.21
+      '@types/node': 17.0.23
+      '@vercel/node-bridge': 2.2.0
       ts-node: 8.9.1_typescript@4.3.4
       typescript: 4.3.4
     dev: false
@@ -64,12 +69,12 @@ packages:
     engines: {node: '>=0.3.1'}
     dev: false
 
-  /discord-api-types/0.28.0:
-    resolution: {integrity: sha512-Gi36pbzV+2j0q/XPlDJEgX/R+wogLxU2BZFvfTMUHHAQYXqwvqj4iZP5YUGOfKimmJc79rDRrtSPUGz2t4S4GQ==}
+  /discord-api-types/0.30.0:
+    resolution: {integrity: sha512-wYst0jrT8EJs2tVlwUTQ2xT0oWMjUrRMpFTkNY3NMleWyQNHgWaKhqFfxdLPdC2im9IuR5EsxcEgjhf/npeftw==}
     dev: false
 
-  /discord-interactions/3.0.0:
-    resolution: {integrity: sha512-m0E0JVxYhldmEMHhi/VPLG06LSugAg6cHvnoaQHFqrDUR80LuuwKQA5FPTWWoWthGq+B5n0hGGn0RC3DYhSMrw==}
+  /discord-interactions/3.1.0:
+    resolution: {integrity: sha512-AslkLAwaiq7ulFcurMoDf+FXINZWiF7/i+7U3tcKJHq/2zpxYKortPhaisM2f4c3hIL8ioddSCwVbRR4ngPIwA==}
     engines: {node: '>=12'}
     dependencies:
       tweetnacl: 1.0.3
@@ -81,23 +86,23 @@ packages:
     dependencies:
       asynckit: 0.4.0
       combined-stream: 1.0.8
-      mime-types: 2.1.34
+      mime-types: 2.1.35
     dev: false
 
   /make-error/1.3.6:
     resolution: {integrity: sha512-s8UhlNe7vPKomQhC1qFelMokr/Sc3AgNbso3n74mVPA5LTZwkB9NlXf4XPamLxJE8h0gh73rM94xvwRT2CVInw==}
     dev: false
 
-  /mime-db/1.51.0:
-    resolution: {integrity: sha512-5y8A56jg7XVQx2mbv1lu49NR4dokRnhZYTtL+KGfaa27uq4pSTXkwQkFJl4pkRMyNFz/EtYDSkiiEHx3F7UN6g==}
+  /mime-db/1.52.0:
+    resolution: {integrity: sha512-sPU4uV7dYlvtWJxwwxHD0PuihVNiE7TyAbQ5SWxDCB9mUYvOgroQOwYQQOKPJ8CIbE+1ETVlOoK1UC2nU3gYvg==}
     engines: {node: '>= 0.6'}
     dev: false
 
-  /mime-types/2.1.34:
-    resolution: {integrity: sha512-6cP692WwGIs9XXdOO4++N+7qjqv0rqxxVvJ3VHPh/Sc9mVZcQP+ZGhkKiTvWMQRr2tbHkJP/Yn7Y0npb3ZBs4A==}
+  /mime-types/2.1.35:
+    resolution: {integrity: sha512-ZDY+bPm5zTTF+YpCrAU9nK0UgICYPT0QtT1NZWFv4s++TNkcgVaT0g6+4R2uI4MjQjzysHB1zxuWL50hzaeXiw==}
     engines: {node: '>= 0.6'}
     dependencies:
-      mime-db: 1.51.0
+      mime-db: 1.52.0
     dev: false
 
   /node-fetch/2.6.7:
