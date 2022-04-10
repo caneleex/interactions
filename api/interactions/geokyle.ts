@@ -1,6 +1,6 @@
 import { APIMessageComponentButtonInteraction, InteractionResponseType, MessageFlags, RESTPatchAPIGuildMemberJSONBody, RouteBases, Routes } from 'discord-api-types/v10';
-import { handler } from '../lib/handler'
-import { respond } from '../lib/utils';
+import { handler } from '../../lib/handler'
+import { respond } from '../../lib/utils';
 import fetch from 'node-fetch';
 
 export default handler(async (interaction, res) => {

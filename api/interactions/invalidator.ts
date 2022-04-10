@@ -1,7 +1,7 @@
 import { APIMessageApplicationCommandInteraction, InteractionResponseType, MessageFlags } from 'discord-api-types/v10';
-import { handler } from '../lib/handler';
-import { get_context_menu_target_message, respond } from '../lib/utils';
-import { GistResponse, TokenPayload } from '../lib/types';
+import { handler } from '../../lib/handler';
+import { get_context_menu_target_message, respond } from '../../lib/utils';
+import { GistResponse, TokenPayload } from '../../lib/types';
 import fetch from 'node-fetch';
 
 const token_regex = new RegExp('[A-Za-z\\d]{24}\\.[\\w-]{6}\\.[\\w-]{27}', 'g')

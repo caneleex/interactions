@@ -1,5 +1,10 @@
 import { VercelResponse } from "@vercel/node";
-import { APIApplicationCommandInteractionDataBasicOption, APIChatInputApplicationCommandInteraction, APIInteractionResponse, APIMessage, APIMessageApplicationCommandInteraction, APIUser, APIUserApplicationCommandInteraction } from "discord-api-types/v10";
+import { APIApplicationCommandInteractionDataBasicOption, APIChatInputApplicationCommandInteraction, APIInteractionResponse, APIMessage, APIMessageApplicationCommandInteraction, APIUser, APIUserApplicationCommandInteraction, RESTGetAPIOAuth2CurrentApplicationResult, RouteBases, Routes } from "discord-api-types/v10";
+import fetch from 'node-fetch'
+
+const invite_url = (id: string, permissions: string) => `https://discord.com/oauth2/authorize?client_id=${id}&permissions=${permissions}&scope=bot+applications.commands`
+
+// interactions
 
 export const respond = (response: APIInteractionResponse, res: VercelResponse) =>
 res.setHeader('Content-Type', 'application/json').send(JSON.stringify(response))
@@ -28,4 +33,15 @@ function get_option(interaction: APIChatInputApplicationCommandInteraction, name
     return undefined
   }
   return (Object.values(options).find(option => option.name === name) as APIApplicationCommandInteractionDataBasicOption)?.value
+}
+
+// other
+
+export async function get_invite_url(): Promise<string> {
+  const response = await fetch(`${RouteBases.api}${Routes.oauth2CurrentApplication()}`, {
+    method: 'GET',
+    headers: {'Authorization': process.env.SPIDEY_TOKEN}
+  })
+  const appResponse = await response.json() as RESTGetAPIOAuth2CurrentApplicationResult
+  return invite_url(appResponse.id, appResponse.install_params.permissions)
 }
