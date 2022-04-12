@@ -1,3 +1,5 @@
+// gist
+
 export interface TokenPayload {
   files: Files;
   description: string;
@@ -15,4 +17,12 @@ interface Tokens {
 export interface GistResponse {
   html_url: string;
   id: string;
+}
+
+// cf
+
+export interface CFMetadataResponse {
+  result: {
+    id: string;
+  };
 }

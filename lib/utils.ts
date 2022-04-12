@@ -1,16 +1,23 @@
 import { VercelResponse } from "@vercel/node";
-import { APIApplicationCommandInteractionDataBasicOption, APIChatInputApplicationCommandInteraction, APIInteractionResponse, APIMessage, APIMessageApplicationCommandInteraction, APIUser, APIUserApplicationCommandInteraction, RESTGetAPIOAuth2CurrentApplicationResult, RouteBases, Routes } from "discord-api-types/v10";
-import fetch from 'node-fetch'
+import { APIApplicationCommandInteractionDataBasicOption, APIChatInputApplicationCommandInteraction, APIInteraction, APIInteractionResponse, APIInteractionResponseCallbackData, APIMessage, APIMessageApplicationCommandInteraction, APIUser, APIUserApplicationCommandInteraction, RouteBases, Routes } from "discord-api-types/v10";
+import fetch from 'node-fetch';
 
-const invite_url = (id: string, permissions: string) => `https://discord.com/oauth2/authorize?client_id=${id}&permissions=${permissions}&scope=bot+applications.commands`
+export const respond = (response: APIInteractionResponse, res: VercelResponse) => res.setHeader('Content-Type', 'application/json').send(JSON.stringify(response))
+export const followup = async (response: APIInteractionResponseCallbackData, interaction: APIInteraction, res: VercelResponse) => {
+  await fetch(`${RouteBases.api}${Routes.webhook(interaction.application_id, interaction.token)}`, {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify(response)
+  })
+  res.status(204).send(null)
+}
 
-// interactions
-
-export const respond = (response: APIInteractionResponse, res: VercelResponse) =>
-res.setHeader('Content-Type', 'application/json').send(JSON.stringify(response))
+export function get_string_option(interaction: APIChatInputApplicationCommandInteraction, name: string): string | undefined {
+  return get_option(interaction, name) as string
+}
 
 export function get_user_option(interaction: APIChatInputApplicationCommandInteraction, name: string): APIUser | undefined {
-  return interaction.data.resolved.users[get_option(interaction, name) as string]
+  return interaction.data.resolved.users[get_string_option(interaction, name)]
 }
 
 export function get_boolean_option(interaction: APIChatInputApplicationCommandInteraction, name: string): boolean | undefined {
@@ -33,15 +40,4 @@ function get_option(interaction: APIChatInputApplicationCommandInteraction, name
     return undefined
   }
   return (Object.values(options).find(option => option.name === name) as APIApplicationCommandInteractionDataBasicOption)?.value
-}
-
-// other
-
-export async function get_invite_url(): Promise<string> {
-  const response = await fetch(`${RouteBases.api}${Routes.oauth2CurrentApplication()}`, {
-    method: 'GET',
-    headers: {'Authorization': process.env.SPIDEY_TOKEN}
-  })
-  const appResponse = await response.json() as RESTGetAPIOAuth2CurrentApplicationResult
-  return invite_url(appResponse.id, appResponse.install_params.permissions)
 }

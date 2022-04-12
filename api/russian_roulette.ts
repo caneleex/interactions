@@ -1,6 +1,6 @@
 import { APIChatInputApplicationCommandInteraction, InteractionResponseType, RESTPatchAPIGuildMemberJSONBody, RouteBases, Routes } from 'discord-api-types/v10';
-import { handler } from '../../lib/handler';
-import { get_boolean_option, respond } from '../../lib/utils';
+import { handler } from '../lib/handler';
+import { get_boolean_option, respond } from '../lib/utils';
 import fetch from 'node-fetch'
 
 const survive_template = (mention: string) => `The trigger is pulled. ${mention} survives!`
