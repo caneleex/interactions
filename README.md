@@ -27,3 +27,7 @@ Russian Roulette is a Discord bot which can timeout members for random periods o
 ## [GeoKyle](https://github.com/caneleex/interactions/blob/master/api/geokyle.ts)
 
 GeoKyle Bot is a custom bot for the Discord server of [GeoKyle](https://youtube.com/c/GeoKyle), that, right now, only serves as a way to opt into getting notifications for new videos.
+
+## [sponsorblock.vip vanity](https://github.com/caneleex/interactions/blob/master/api/sb_vip_vanity.ts)
+
+sponsorblock.vip vanity is a custom bot for the SponsorBlock Discord server which VIPs can use to create their vanity link pointing to their public user id.
