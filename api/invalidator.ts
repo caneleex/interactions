@@ -1,6 +1,6 @@
 import { APIMessageApplicationCommandInteraction, InteractionResponseType, MessageFlags } from 'discord-api-types/v10';
 import { handler } from '../lib/handler';
-import { get_context_menu_target_message, respond } from '../lib/utils';
+import { defer, followup, get_context_menu_target_message, respond } from '../lib/utils';
 import { GistResponse, TokenPayload } from '../lib/types';
 import fetch from 'node-fetch';
 
@@ -15,10 +15,12 @@ export default handler(async (interaction, res) => {
       type: InteractionResponseType.ChannelMessageWithSource,
       data: {
         content: 'No tokens were found in the targeted message.',
+        flags: MessageFlags.Ephemeral
       }
     }, res)
     return
   }
+  defer(interaction)
   const payload: TokenPayload = {
     files: {
       'tokens.txt': {
@@ -34,11 +36,8 @@ export default handler(async (interaction, res) => {
     headers: {'Authorization': process.env.GIST_TOKEN, 'Content-Type': 'application/vnd.github.v3+json', 'User-Agent': 'Token Invalidator Bot'}
   })
   const gistResponse = await response.json() as GistResponse
-  respond({
-    type: InteractionResponseType.ChannelMessageWithSource,
-    data: {
-      content: `The tokens have been sent to ${gistResponse.html_url} to be invalidated.`,
-      flags: MessageFlags.SuppressEmbeds
-    }
-  }, res)
+  followup({
+    content: `The tokens have been sent to <${gistResponse.html_url}> to be invalidated.`,
+    flags: MessageFlags.SuppressEmbeds // TODO this has no effect right now
+  }, interaction, res)
 });

@@ -1,8 +1,20 @@
 import { VercelResponse } from "@vercel/node";
-import { APIApplicationCommandInteractionDataBasicOption, APIChatInputApplicationCommandInteraction, APIInteraction, APIInteractionResponse, APIInteractionResponseCallbackData, APIMessage, APIMessageApplicationCommandInteraction, APIUser, APIUserApplicationCommandInteraction, RouteBases, Routes } from "discord-api-types/v10";
+import { APIApplicationCommandInteractionDataBasicOption, APIChatInputApplicationCommandInteraction, APIInteraction, APIInteractionResponse, APIInteractionResponseCallbackData, APIMessage, APIMessageApplicationCommandInteraction, APIUser, APIUserApplicationCommandInteraction, MessageFlags, RESTPostAPIInteractionCallbackJSONBody, RouteBases, Routes } from "discord-api-types/v10";
 import fetch from 'node-fetch';
 
 export const respond = (response: APIInteractionResponse, res: VercelResponse) => res.setHeader('Content-Type', 'application/json').send(JSON.stringify(response))
+export const defer = async (interaction: APIInteraction) => {
+  await fetch(`${RouteBases.api}${Routes.interactionCallback(interaction.id, interaction.token)}`, {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({
+      type: 5,
+      data: {
+        flags: MessageFlags.Ephemeral
+      }
+    } as RESTPostAPIInteractionCallbackJSONBody)
+  })
+}
 export const followup = async (response: APIInteractionResponseCallbackData, interaction: APIInteraction, res: VercelResponse) => {
   await fetch(`${RouteBases.api}${Routes.webhook(interaction.application_id, interaction.token)}`, {
     method: 'POST',

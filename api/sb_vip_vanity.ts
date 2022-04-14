@@ -1,9 +1,9 @@
 import { handler } from '../lib/handler';
-import { followup, get_string_option, respond } from '../lib/utils';
+import { defer, followup, get_string_option, respond } from '../lib/utils';
 import { CFMetadataResponse } from '../lib/types'
 import fetch from 'node-fetch';
 import FormData from 'form-data'
-import { APIChatInputApplicationCommandInteraction, InteractionResponseType, MessageFlags, RESTPostAPIInteractionCallbackJSONBody, RouteBases, Routes } from 'discord-api-types/v10';
+import { APIChatInputApplicationCommandInteraction, InteractionResponseType, MessageFlags } from 'discord-api-types/v10';
 
 const metadata_api_url = (key: string) => `https://api.cloudflare.com/client/v4/accounts/6dccc8a823380a32fe8792904b2cd886/storage/kv/namespaces/b44b93e4cc174443aca099a3763b29ff/metadata/${key}`
 const value_api_url = (key: string) => `https://api.cloudflare.com/client/v4/accounts/6dccc8a823380a32fe8792904b2cd886/storage/kv/namespaces/b44b93e4cc174443aca099a3763b29ff/values/${key}`
@@ -22,16 +22,7 @@ export default handler(async (interaction, res) => {
     }, res)
     return
   }
-  await fetch(`${RouteBases.api}${Routes.interactionCallback(interaction.id, interaction.token)}`, {
-    method: 'POST',
-    headers: {'Content-Type': 'application/json'},
-    body: JSON.stringify({
-      type: 5,
-      data: {
-        flags: MessageFlags.Ephemeral
-      }
-    } as RESTPostAPIInteractionCallbackJSONBody)
-  })
+  defer(interaction)
   const vanity = get_string_option(slash_command, 'vanity').toLowerCase()
   const metadata_response = await fetch(metadata_api_url(vanity), {
     method: 'GET',
