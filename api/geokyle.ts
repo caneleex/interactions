@@ -8,8 +8,8 @@ export default handler(async (interaction, res) => {
   const button_id = data.custom_id
   const member = interaction.member
   const member_roles = interaction.member.roles
-  const hasRole = member_roles.includes(button_id)
-  if (hasRole) {
+  const has_role = member_roles.includes(button_id)
+  if (has_role) {
     member_roles.splice(member_roles.indexOf(button_id), 1);
   }
   else {
@@ -27,7 +27,7 @@ export default handler(async (interaction, res) => {
     message = `❌ There was an error while toggling your role: ${response.status}`
   }
   else {
-    if (hasRole) {
+    if (has_role) {
       message = `Successfully removed role <@&${button_id}> from you.`
     }
     else {

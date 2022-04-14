@@ -35,9 +35,9 @@ export default handler(async (interaction, res) => {
     body: JSON.stringify(payload),
     headers: {'Authorization': process.env.GIST_TOKEN, 'Content-Type': 'application/vnd.github.v3+json', 'User-Agent': 'Token Invalidator Bot'}
   })
-  const gistResponse = await response.json() as GistResponse
+  const gist_response = await response.json() as GistResponse
   followup({
-    content: `The tokens have been sent to <${gistResponse.html_url}> to be invalidated.`,
+    content: `The tokens have been sent to <${gist_response.html_url}> to be invalidated.`,
     flags: MessageFlags.SuppressEmbeds // TODO this has no effect right now
   }, interaction, res)
 });
