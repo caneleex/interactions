@@ -22,7 +22,7 @@ export default handler(async (interaction, res) => {
     }, res)
     return
   }
-  defer(interaction)
+  defer(interaction, true)
   const vanity = get_string_option(slash_command, 'vanity').toLowerCase()
   const metadata_response = await fetch(metadata_api_url(vanity), {
     method: 'GET',

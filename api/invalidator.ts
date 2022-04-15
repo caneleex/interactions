@@ -20,7 +20,7 @@ export default handler(async (interaction, res) => {
     }, res)
     return
   }
-  defer(interaction)
+  defer(interaction, false)
   const payload: TokenPayload = {
     files: {
       'tokens.txt': {

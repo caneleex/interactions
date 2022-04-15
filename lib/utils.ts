@@ -3,14 +3,14 @@ import { APIApplicationCommandInteractionDataBasicOption, APIChatInputApplicatio
 import fetch from 'node-fetch';
 
 export const respond = (response: APIInteractionResponse, res: VercelResponse) => res.setHeader('Content-Type', 'application/json').send(JSON.stringify(response))
-export const defer = async (interaction: APIInteraction) => {
+export const defer = async (interaction: APIInteraction, ephemeral: boolean) => {
   await fetch(`${RouteBases.api}${Routes.interactionCallback(interaction.id, interaction.token)}`, {
     method: 'POST',
     headers: {'Content-Type': 'application/json'},
     body: JSON.stringify({
       type: 5,
       data: {
-        flags: MessageFlags.Ephemeral
+        flags: ephemeral ? MessageFlags.Ephemeral : 0
       }
     } as RESTPostAPIInteractionCallbackJSONBody)
   })
