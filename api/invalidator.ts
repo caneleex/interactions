@@ -24,7 +24,7 @@ export default handler(async (interaction, res) => {
   const payload: TokenPayload = {
     files: {
       'tokens.txt': {
-        content: `${tokens.join("\n")}`
+        content: tokens.join("\n")
       }
     },
     description: 'Token Invalidator Bot by cane#8081.',

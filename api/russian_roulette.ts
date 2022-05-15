@@ -49,7 +49,7 @@ export default handler(async (interaction, res) => {
     respond({
       type: InteractionResponseType.ChannelMessageWithSource,
       data: {
-        content: `${death_template(mention, Math.floor(date.getTime() / 1000))}`,
+        content: death_template(mention, Math.floor(date.getTime() / 1000)),
         allowed_mentions: {
           parse: []
         }

@@ -33,7 +33,7 @@ export default handler((interaction, res) => {
               type: 2,
               label: 'Open reverse image search',
               style: 5,
-              url: `${get_reverse_url(user)}`
+              url: get_reverse_url(user)
             }
           ]
         }
