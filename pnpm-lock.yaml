@@ -2,21 +2,21 @@ lockfileVersion: 5.3
 
 specifiers:
   '@types/node-fetch': ^2.6.1
-  '@vercel/node': ^1.14.1
-  discord-api-types: 0.31.1
+  '@vercel/node': ^1.15.2
+  discord-api-types: 0.32.1
   discord-interactions: ^3.2.0
   form-data: ^4.0.0
   node-fetch: 2.6.7
-  vercel: ^24.1.0
+  vercel: ^24.2.3
 
 dependencies:
   '@types/node-fetch': 2.6.1
-  '@vercel/node': 1.14.1
-  discord-api-types: 0.31.1
+  '@vercel/node': 1.15.2
+  discord-api-types: 0.32.1
   discord-interactions: 3.2.0
   form-data: 4.0.0
   node-fetch: 2.6.7
-  vercel: 24.1.0
+  vercel: 24.2.3
 
 packages:
 
@@ -35,41 +35,41 @@ packages:
   /@types/node-fetch/2.6.1:
     resolution: {integrity: sha512-oMqjURCaxoSIsHSr1E47QHzbmzNR5rK8McHuNb11BOM9cHcIK3Avy0s/b2JlXHoQGTYS3NsvWzV1M0iK7l0wbA==}
     dependencies:
-      '@types/node': 17.0.24
+      '@types/node': 17.0.33
       form-data: 3.0.1
     dev: false
 
-  /@types/node/17.0.24:
-    resolution: {integrity: sha512-aveCYRQbgTH9Pssp1voEP7HiuWlD2jW2BO56w+bVrJn04i61yh6mRfoKO6hEYQD9vF+W8Chkwc6j1M36uPkx4g==}
+  /@types/node/17.0.33:
+    resolution: {integrity: sha512-miWq2m2FiQZmaHfdZNcbpp9PuXg34W5JZ5CrJ/BaS70VuhoJENBEQybeiYSaPBRNq6KQGnjfEnc/F3PN++D+XQ==}
     dev: false
 
-  /@vercel/build-utils/2.15.1:
-    resolution: {integrity: sha512-7qwC7wd2Q/MwtD07/La5qIR5nfpfNVPvISp1cfwYs8fe/FUKjDdbhvGLDFrry+DeoeMFJhnJgK2qmvCnucq+GA==}
+  /@vercel/build-utils/3.0.1:
+    resolution: {integrity: sha512-uW61uzc/la5uQNaTL8QJThSQkrbMwKFt7JUCXwyvyW4PfdN6GgYMYEMgTIXrG7Dows3pSOD7A9K0Hl5z8KvOzQ==}
     dev: false
 
-  /@vercel/go/1.3.2:
-    resolution: {integrity: sha512-SS2Iq5NSRrZBphWWX+HpdCf3ji4lUBs9JdLmuvn8anDreY68ubxo53LLTnVOXmzsnHE8G1CiQSNtOapeBxWYyQ==}
+  /@vercel/go/1.4.2:
+    resolution: {integrity: sha512-LUro28q/FWX6T2bQY244X7la8v4ZQs6CGBhJB0qUFU5Ft8f32sViDVkomd7Q/PuiJxTh6e/W8RYGrl0kApKDkg==}
     dev: false
 
-  /@vercel/node-bridge/2.2.0:
-    resolution: {integrity: sha512-ydYlZyIQfsuriF6qTt/F4vaAt+nb4ZKhLEl2o5AQFa5ED7LoPS5w01Xbujy+25pqS1ODu8/bsqOCUSX8y/+tSQ==}
+  /@vercel/node-bridge/2.2.1:
+    resolution: {integrity: sha512-GJdBio0nKyxvFwfLcj6CMp2s22d5V6K9tmhmHkQcaiFwdKWK/Pa7jngiO84a09fvX+DFaOtpalJuxQa5LAJ9xQ==}
     dev: false
 
-  /@vercel/node/1.14.1:
-    resolution: {integrity: sha512-/R1tERotQMTBoB4gw390B8wJAOS9IO4iejing9jqLFSISdW7uVU6kgkUbLM8OtuN0DGwi1qYQ6DcdxySX2qYzw==}
+  /@vercel/node/1.15.2:
+    resolution: {integrity: sha512-paHKi2u75/G5g6My/BTXc9uQlMnUxEHSedQepWEzb6d0VNclGAMbIb8KMjBP8/eZ//5qKPuVM3hgHjC3+pShkw==}
     dependencies:
-      '@types/node': 17.0.24
-      '@vercel/node-bridge': 2.2.0
+      '@types/node': 17.0.33
+      '@vercel/node-bridge': 2.2.1
       ts-node: 8.9.1_typescript@4.3.4
       typescript: 4.3.4
     dev: false
 
-  /@vercel/python/2.2.2:
-    resolution: {integrity: sha512-08x3kzFTiWlY9lSRmIksm1gHzz9wrHoyv2w7DdOHAbueEGJTbbMoHNeBPWwQ7hLjfMhCM5JOMjezAz3Uw0kEJg==}
+  /@vercel/python/2.3.2:
+    resolution: {integrity: sha512-qLNyiNf9bauz/GoY/GaOp/GjCx2olJQ3Uyd3EaP99aQC2jx9uCtofMXh4s9JAYgG8+qOr3M7AEhFbNjJza7wrQ==}
     dev: false
 
-  /@vercel/ruby/1.3.2:
-    resolution: {integrity: sha512-SAC1+wHT60IvAJ4CBLylnCZYF7nO7xtvIhO3NL1O4WBMRNgep5oewDNgxIQ/6XzGEymPijI4FP2tBHQ3v557nQ==}
+  /@vercel/ruby/1.3.5:
+    resolution: {integrity: sha512-GCylepOL4seK8ox/Q5VM4fCkTLK5dzXy1/iI6IG/6DwgrKgbP/Ojy08YeUKaBcPLXLJgZ0nx+NBIbqo5L5malw==}
     dev: false
 
   /ansi-align/3.0.1:
@@ -218,8 +218,8 @@ packages:
     engines: {node: '>=0.3.1'}
     dev: false
 
-  /discord-api-types/0.31.1:
-    resolution: {integrity: sha512-QBWl1/x20ZyKAiY750wuWAWokudhlOnQzXhCTEkQsCNOOM9tU/HIqkpLgZqJI1EFmZMeWHdaRKzpiD7n7iCS+w==}
+  /discord-api-types/0.32.1:
+    resolution: {integrity: sha512-/ewl0CPYT5xjOC+SJ7wADJKjtpZfiiUaYXOP/Ns54lnBcv4Xqa4iKSqRF/w1fjiUvWTYN9W8UuOiyCHtmu5fJw==}
     dev: false
 
   /discord-interactions/3.2.0:
@@ -675,17 +675,17 @@ packages:
       prepend-http: 2.0.0
     dev: false
 
-  /vercel/24.1.0:
-    resolution: {integrity: sha512-OSX9Dn7+EAQnITdx4+cvfhtOLIi81qzbQwh9FtLmDOarba+reXDDTAJX/yxtcohSLT2NmyJ8mDyIdhr/5FeE8g==}
+  /vercel/24.2.3:
+    resolution: {integrity: sha512-ezriIQotWuSxZ7aqcEuB1+lKi0MHp8/BEvvaOmzf27fP7+mLVBVEdPc8bzlpw548wk/l8wBRhvRDzc1kpuDnRQ==}
     engines: {node: '>= 12'}
     hasBin: true
     requiresBuild: true
     dependencies:
-      '@vercel/build-utils': 2.15.1
-      '@vercel/go': 1.3.2
-      '@vercel/node': 1.14.1
-      '@vercel/python': 2.2.2
-      '@vercel/ruby': 1.3.2
+      '@vercel/build-utils': 3.0.1
+      '@vercel/go': 1.4.2
+      '@vercel/node': 1.15.2
+      '@vercel/python': 2.3.2
+      '@vercel/ruby': 1.3.5
       update-notifier: 4.1.0
     dev: false
 
