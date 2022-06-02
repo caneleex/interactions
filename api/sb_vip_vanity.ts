@@ -8,6 +8,7 @@ import { APIChatInputApplicationCommandInteraction, InteractionResponseType, Mes
 const metadata_api_url = (key: string) => `https://api.cloudflare.com/client/v4/accounts/6dccc8a823380a32fe8792904b2cd886/storage/kv/namespaces/b44b93e4cc174443aca099a3763b29ff/metadata/${key}`
 const value_api_url = (key: string) => `https://api.cloudflare.com/client/v4/accounts/6dccc8a823380a32fe8792904b2cd886/storage/kv/namespaces/b44b93e4cc174443aca099a3763b29ff/values/${key}`
 const public_id_regex = new RegExp(/^[a-f0-9]{64}$/);
+const vanity_regex = new RegExp(/^[a-zA-Z0-9]{1,32}$/);
 
 export default handler(async (interaction, res) => {
   const slash_command = interaction as APIChatInputApplicationCommandInteraction
@@ -24,6 +25,16 @@ export default handler(async (interaction, res) => {
   }
   defer(interaction, true)
   const vanity = get_string_option(slash_command, 'vanity').toLowerCase()
+  if (!vanity_regex.test(vanity)) {
+    respond({
+      type: InteractionResponseType.ChannelMessageWithSource,
+      data: {
+        content: 'Provided vanity is not in a valid format. Use letters and numbers only up to 32 characters.',
+        flags: MessageFlags.Ephemeral
+      }
+    }, res)
+    return
+  }
   const metadata_response = await fetch(metadata_api_url(vanity), {
     method: 'GET',
     headers: {'Authorization': process.env.CF_TOKEN}
