@@ -1,9 +1,10 @@
 import { APIMessageComponentButtonInteraction, InteractionResponseType, MessageFlags, RESTPatchAPIGuildMemberJSONBody, RouteBases, Routes } from 'discord-api-types/v10';
 import { handler } from '../lib/handler'
-import { respond } from '../lib/utils';
+import { defer, respond } from '../lib/utils';
 import fetch from 'node-fetch';
 
 export default handler(async (interaction, res) => {
+  defer(interaction, true)
   const data = (interaction as APIMessageComponentButtonInteraction).data
   const button_id = data.custom_id
   const member = interaction.member
