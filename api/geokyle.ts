@@ -1,6 +1,6 @@
-import { APIMessageComponentButtonInteraction, InteractionResponseType, MessageFlags, RESTPatchAPIGuildMemberJSONBody, RouteBases, Routes } from 'discord-api-types/v10';
+import { APIMessageComponentButtonInteraction, MessageFlags, RESTPatchAPIGuildMemberJSONBody, RouteBases, Routes } from 'discord-api-types/v10';
 import { handler } from '../lib/handler'
-import { defer, respond } from '../lib/utils';
+import { defer, followup } from '../lib/utils';
 import fetch from 'node-fetch';
 
 export default handler(async (interaction, res) => {
@@ -35,11 +35,8 @@ export default handler(async (interaction, res) => {
       message = `Successfully added role <@&${button_id}> to you.`
     }
   }
-  respond({
-    type: InteractionResponseType.ChannelMessageWithSource,
-    data: {
-      content: message,
-      flags: MessageFlags.Ephemeral
-    }
-  }, res)
+  followup({
+    content: message,
+    flags: MessageFlags.Ephemeral
+  }, interaction, res)
 });
