@@ -3,7 +3,7 @@ lockfileVersion: 5.3
 specifiers:
   '@types/node-fetch': ^2.6.1
   '@vercel/node': ^1.15.4
-  discord-api-types: 0.33.5-next.cb66309.1654531071
+  discord-api-types: 0.33.5
   discord-interactions: ^3.2.0
   form-data: ^4.0.0
   node-fetch: 2.6.7
@@ -12,7 +12,7 @@ specifiers:
 dependencies:
   '@types/node-fetch': 2.6.1
   '@vercel/node': 1.15.4
-  discord-api-types: 0.33.5-next.cb66309.1654531071
+  discord-api-types: 0.33.5
   discord-interactions: 3.2.0
   form-data: 4.0.0
   node-fetch: 2.6.7
@@ -592,8 +592,8 @@ packages:
     engines: {node: '>=0.3.1'}
     dev: false
 
-  /discord-api-types/0.33.5-next.cb66309.1654531071:
-    resolution: {integrity: sha512-rkQpuDLIqfoEeuI87BiaIE3KYyPTOL/Ni6XU5PoaidR1L3wdGIGceWrCgdNQRo9g02fiy0nXzRQ+wrHouSGOig==}
+  /discord-api-types/0.33.5:
+    resolution: {integrity: sha512-dvO5M52v7m7Dy96+XUnzXNsQ/0npsYpU6dL205kAtEDueswoz3aU3bh1UMoK4cQmcGtB1YRyLKqp+DXi05lzFg==}
     dev: false
 
   /discord-interactions/3.2.0:
@@ -1561,7 +1561,7 @@ packages:
     dev: false
 
   /responselike/1.0.2:
-    resolution: {integrity: sha1-kYcg7ztjHFZCvgaPFa3lpG9Loec=}
+    resolution: {integrity: sha512-/Fpe5guzJk1gPqdJLJR5u7eG/gNY4nImjbRDaVWVMRhne55TCmj2i9Q+54PBRfatRC8v/rIiv9BN0pMd9OV5EQ==}
     dependencies:
       lowercase-keys: 1.0.1
     dev: false
@@ -1964,7 +1964,7 @@ packages:
   /wide-align/1.1.5:
     resolution: {integrity: sha512-eDMORYaPNZ4sQIuuYPDHdQvf4gyCF9rEEV/yPxGfwPkRodwEgiMUUXTx/dex+Me0wxx53S+NgUHaP7y3MGlDmg==}
     dependencies:
-      string-width: 1.0.2
+      string-width: 4.2.3
     dev: false
 
   /widest-line/3.1.0:
