@@ -29,7 +29,7 @@ export function get_string_option(interaction: APIChatInputApplicationCommandInt
 }
 
 export function get_user_option(interaction: APIChatInputApplicationCommandInteraction, name: string): APIUser | undefined {
-  return interaction.data.resolved.users[get_string_option(interaction, name)]
+  return interaction.data!.resolved!.users![get_string_option(interaction, name)!]
 }
 
 export function get_boolean_option(interaction: APIChatInputApplicationCommandInteraction, name: string): boolean | undefined {

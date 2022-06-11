@@ -20,7 +20,8 @@ export default handler(async (interaction, res) => {
     return
   }
   const survive = Math.random() < 0.5
-  const mention = `<@${interaction.member.user.id}>`
+  const member = interaction.member!
+  const mention = `<@${member.user.id}>`
   if (survive) {
     respond({
       type: InteractionResponseType.ChannelMessageWithSource,
@@ -38,9 +39,9 @@ export default handler(async (interaction, res) => {
   const timeout_duration = Math.floor(Math.random() * ((max_timeout_duration + 1) - 1) + 1)
   const date = new Date()
   date.setTime(date.getTime() + timeout_duration * 1000)
-  const response = await fetch(`${RouteBases.api}${Routes.guildMember(guild_id, interaction.member.user.id)}`, {
+  const response = await fetch(`${RouteBases.api}${Routes.guildMember(guild_id, member.user.id)}`, {
     method: 'PATCH',
-    headers: {'Authorization': process.env.RUSSIAN_ROULETTE_TOKEN, 'Content-Type': 'application/json'},
+    headers: {'Authorization': process.env.RUSSIAN_ROULETTE_TOKEN!, 'Content-Type': 'application/json'},
     body: JSON.stringify({
       communication_disabled_until: date.toISOString()
     } as RESTPatchAPIGuildMemberJSONBody)

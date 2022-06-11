@@ -7,8 +7,8 @@ export default handler(async (interaction, res) => {
   defer(interaction, true)
   const data = (interaction as APIMessageComponentButtonInteraction).data
   const button_id = data.custom_id
-  const member = interaction.member
-  const member_roles = interaction.member.roles
+  const member = interaction.member!
+  const member_roles = interaction.member!.roles
   const has_role = member_roles.includes(button_id)
   if (has_role) {
     member_roles.splice(member_roles.indexOf(button_id), 1);
@@ -16,9 +16,9 @@ export default handler(async (interaction, res) => {
   else {
     member_roles.push(button_id)
   }
-  const response = await fetch(`${RouteBases.api}${Routes.guildMember(interaction.guild_id, member.user.id)}`, {
+  const response = await fetch(`${RouteBases.api}${Routes.guildMember(interaction.guild_id!, member.user.id)}`, {
     method: 'PATCH',
-    headers: {'Authorization': process.env.GEOKYLE_TOKEN, 'Content-Type': 'application/json'},
+    headers: {'Authorization': process.env.GEOKYLE_TOKEN!, 'Content-Type': 'application/json'},
     body: JSON.stringify({
       roles: member_roles
     } as RESTPatchAPIGuildMemberJSONBody)

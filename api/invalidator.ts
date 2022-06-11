@@ -33,7 +33,7 @@ export default handler(async (interaction, res) => {
   const response = await fetch(gist_url, {
     method: 'POST',
     body: JSON.stringify(payload),
-    headers: {'Authorization': process.env.GIST_TOKEN, 'Content-Type': 'application/vnd.github.v3+json', 'User-Agent': 'Token Invalidator Bot'}
+    headers: {'Authorization': process.env.GIST_TOKEN!, 'Content-Type': 'application/vnd.github.v3+json', 'User-Agent': 'Token Invalidator Bot'}
   })
   const gist_response = await response.json() as GistResponse
   followup({

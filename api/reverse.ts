@@ -12,7 +12,7 @@ export default handler((interaction, res) => {
   const command = interaction_data.name
   let user: APIUser
   if (command === 'reverse') {
-    user = get_user_option(interaction as APIChatInputApplicationCommandInteraction, 'user')
+    user = get_user_option(interaction as APIChatInputApplicationCommandInteraction, 'user')!
   }
   else if (command === 'Reverse Avatar Search') {
     user = get_context_menu_target_user(interaction as APIUserApplicationCommandInteraction)
@@ -20,7 +20,7 @@ export default handler((interaction, res) => {
   respond({
     type: InteractionResponseType.ChannelMessageWithSource,
     data: {
-      content: `Click the button below to reverse search <@${user.id}>'s avatar.`,
+      content: `Click the button below to reverse search <@${user!.id}>'s avatar.`,
       flags: MessageFlags.Ephemeral,
       allowed_mentions: {
         parse: []
@@ -33,7 +33,7 @@ export default handler((interaction, res) => {
               type: 2,
               label: 'Open reverse image search',
               style: 5,
-              url: get_reverse_url(user)
+              url: get_reverse_url(user!)
             }
           ]
         }

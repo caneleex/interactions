@@ -13,9 +13,9 @@ export function handler(
       return res.redirect('https://github.com/caneleex');
     }
     const body = req.body
-    const url = req.url
+    const url = req.url!
     const endpoint = url.substring(url.lastIndexOf('/') + 1).toUpperCase() // PagMan
-    if (!verifyKey(JSON.stringify(body), signature, timestamp, process.env[endpoint + '_PUB_KEY'])) {
+    if (!verifyKey(JSON.stringify(body), signature, timestamp, process.env[endpoint + '_PUB_KEY']!)) {
       return res.status(401).send(null);
     }
     const interaction = body as APIInteraction

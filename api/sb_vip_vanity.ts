@@ -12,7 +12,7 @@ const vanity_regex = new RegExp(/^[a-zA-Z0-9]{1,32}$/);
 
 export default handler(async (interaction, res) => {
   const slash_command = interaction as APIChatInputApplicationCommandInteraction
-  const sb_user_id = get_string_option(slash_command, 'sb_user_id')
+  const sb_user_id = get_string_option(slash_command, 'sb_user_id')!
   if (!public_id_regex.test(sb_user_id)) {
     respond({
       type: InteractionResponseType.ChannelMessageWithSource,
@@ -24,7 +24,7 @@ export default handler(async (interaction, res) => {
     return
   }
   defer(interaction, true)
-  const vanity = get_string_option(slash_command, 'vanity').toLowerCase()
+  const vanity = get_string_option(slash_command, 'vanity')!.toLowerCase()
   if (!vanity_regex.test(vanity)) {
     respond({
       type: InteractionResponseType.ChannelMessageWithSource,
@@ -37,9 +37,9 @@ export default handler(async (interaction, res) => {
   }
   const metadata_response = await fetch(metadata_api_url(vanity), {
     method: 'GET',
-    headers: {'Authorization': process.env.CF_TOKEN}
+    headers: {'Authorization': process.env.CF_TOKEN!}
   })
-  const user_id = interaction.member.user.id
+  const user_id = interaction.member!.user.id
   if (metadata_response.ok) {
     const cf_response = await metadata_response.json() as CFMetadataResponse
     if (cf_response.result.id !== user_id) {
@@ -56,7 +56,7 @@ export default handler(async (interaction, res) => {
   }))
   const value_response = await fetch(value_api_url(vanity), {
     method: 'PUT',
-    headers: {'Authorization': process.env.CF_TOKEN},
+    headers: {'Authorization': process.env.CF_TOKEN!},
     body: form_data
   })
   if (value_response.ok) {
