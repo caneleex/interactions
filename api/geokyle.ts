@@ -8,7 +8,7 @@ export default handler(async (interaction, res) => {
   const data = (interaction as APIMessageComponentButtonInteraction).data
   const button_id = data.custom_id
   const member = interaction.member!
-  const member_roles = interaction.member!.roles
+  const member_roles = member.roles
   const has_role = member_roles.includes(button_id)
   if (has_role) {
     member_roles.splice(member_roles.indexOf(button_id), 1);
