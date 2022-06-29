@@ -1,4 +1,4 @@
-import { APIChatInputApplicationCommandInteraction, InteractionResponseType, RESTPatchAPIGuildMemberJSONBody, RouteBases, Routes } from 'discord-api-types/v10';
+import { APIChatInputApplicationCommandInteraction, InteractionResponseType, PermissionFlagsBits, RESTPatchAPIGuildMemberJSONBody, RouteBases, Routes } from 'discord-api-types/v10';
 import { handler } from '../lib/handler';
 import { get_boolean_option, respond } from '../lib/utils';
 import fetch from 'node-fetch'
@@ -9,12 +9,12 @@ const max_timeout_basic_seconds = 1800
 const max_timeout_extreme_seconds = 10800
 
 export default handler(async (interaction, res) => {
-  const guild_id = interaction.guild_id
-  if (!guild_id) {
+  const moderate_members = PermissionFlagsBits.ModerateMembers
+  if ((BigInt(interaction.app_permissions!) & moderate_members) != moderate_members) {
     respond({
       type: InteractionResponseType.ChannelMessageWithSource,
       data: {
-        content: '❌ This command is only available in servers.'
+        content: '❌ I don\'t have the "Timeout Members" permission.'
       }
     }, res)
     return
@@ -39,7 +39,7 @@ export default handler(async (interaction, res) => {
   const timeout_duration = Math.floor(Math.random() * ((max_timeout_duration + 1) - 1) + 1)
   const date = new Date()
   date.setTime(date.getTime() + timeout_duration * 1000)
-  const response = await fetch(`${RouteBases.api}${Routes.guildMember(guild_id, member.user.id)}`, {
+  const response = await fetch(`${RouteBases.api}${Routes.guildMember(interaction.guild_id!, member.user.id)}`, {
     method: 'PATCH',
     headers: {'Authorization': process.env.RUSSIAN_ROULETTE_TOKEN!, 'Content-Type': 'application/json'},
     body: JSON.stringify({
@@ -61,7 +61,7 @@ export default handler(async (interaction, res) => {
     respond({
       type: InteractionResponseType.ChannelMessageWithSource,
       data: {
-        content: '❌ An error occurred. I might not have the "Timeout Members" permission or your highest role is higher than mine.'
+        content: '❌ An error occurred. Your highest role might be higher than mine.'
       }
     }, res)
   }

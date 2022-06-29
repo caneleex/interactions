@@ -2,7 +2,7 @@
   "dependencies": {
     "@types/node-fetch": "^2.6.2",
     "@vercel/node": "^1.15.4",
-    "discord-api-types": "0.35.0",
+    "discord-api-types": "0.36.0-next.0c65d40.1656526733",
     "discord-interactions": "^3.2.0",
     "form-data": "^4.0.0",
     "node-fetch": "2.6.7",
