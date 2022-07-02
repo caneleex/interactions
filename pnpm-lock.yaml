@@ -3,7 +3,7 @@ lockfileVersion: 5.3
 specifiers:
   '@types/node-fetch': ^2.6.2
   '@vercel/node': ^1.15.4
-  discord-api-types: 0.36.0-next.0c65d40.1656526733
+  discord-api-types: 0.36.0
   discord-interactions: ^3.2.0
   form-data: ^4.0.0
   node-fetch: 2.6.7
@@ -12,7 +12,7 @@ specifiers:
 dependencies:
   '@types/node-fetch': 2.6.2
   '@vercel/node': 1.15.4
-  discord-api-types: 0.36.0-next.0c65d40.1656526733
+  discord-api-types: 0.36.0
   discord-interactions: 3.2.0
   form-data: 4.0.0
   node-fetch: 2.6.7
@@ -148,7 +148,7 @@ packages:
       glob: 7.2.3
       graceful-fs: 4.2.10
       micromatch: 4.0.5
-      node-gyp-build: 4.4.0
+      node-gyp-build: 4.5.0
       node-pre-gyp: 0.13.0
       resolve-from: 5.0.0
       rollup-pluginutils: 2.8.2
@@ -592,8 +592,8 @@ packages:
     engines: {node: '>=0.3.1'}
     dev: false
 
-  /discord-api-types/0.36.0-next.0c65d40.1656526733:
-    resolution: {integrity: sha512-upjk2C/xIUbsEd/YEBxmVuFUlFvmpbZlw9XDiOrG3sxo8bEAhXckGcfEj7DMXkZc0fGRQP2B+qfpnBm9FPgZ6w==}
+  /discord-api-types/0.36.0:
+    resolution: {integrity: sha512-bazR7FWko6JY4xwoa4Ds4SCRTKGvbzq2ivAuZxiR79RJipU+IXYNvy4tiUt8ixcs2bI04JOQwgHvz491lruBaw==}
     dev: false
 
   /discord-interactions/3.2.0:
@@ -1290,8 +1290,8 @@ packages:
       whatwg-url: 5.0.0
     dev: false
 
-  /node-gyp-build/4.4.0:
-    resolution: {integrity: sha512-amJnQCcgtRVw9SvoebO3BKGESClrfXGCUTX9hSn1OuGQTQBOZmVd0Z0OlecpuRksKvbsUqALE8jls/ErClAPuQ==}
+  /node-gyp-build/4.5.0:
+    resolution: {integrity: sha512-2iGbaQBV+ITgCz76ZEjmhUKAKVf7xfY1sRl4UiKQspfZMH2h06SyhNsnSVy50cwkFQDGLyif6m/6uFXHkOZ6rg==}
     hasBin: true
     dev: false
 
@@ -1964,7 +1964,7 @@ packages:
   /wide-align/1.1.5:
     resolution: {integrity: sha512-eDMORYaPNZ4sQIuuYPDHdQvf4gyCF9rEEV/yPxGfwPkRodwEgiMUUXTx/dex+Me0wxx53S+NgUHaP7y3MGlDmg==}
     dependencies:
-      string-width: 4.2.3
+      string-width: 1.0.2
     dev: false
 
   /widest-line/3.1.0:
