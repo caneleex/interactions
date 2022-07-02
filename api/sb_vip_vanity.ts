@@ -7,7 +7,7 @@ import { APIChatInputApplicationCommandInteraction, InteractionResponseType, Mes
 
 const metadata_api_url = (key: string) => `https://api.cloudflare.com/client/v4/accounts/6dccc8a823380a32fe8792904b2cd886/storage/kv/namespaces/b44b93e4cc174443aca099a3763b29ff/metadata/${key}`
 const value_api_url = (key: string) => `https://api.cloudflare.com/client/v4/accounts/6dccc8a823380a32fe8792904b2cd886/storage/kv/namespaces/b44b93e4cc174443aca099a3763b29ff/values/${key}`
-const public_id_regex = new RegExp(/^[a-f0-9]{64}$/);
+const public_id_regex = new RegExp(/^[a-f0-9]$/);
 const vanity_regex = new RegExp(/^[a-zA-Z0-9]{1,32}$/);
 
 export default handler(async (interaction, res) => {
